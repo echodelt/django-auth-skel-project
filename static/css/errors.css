@@ -1,0 +1,18 @@
+div#container-404,
+div#container-500 {
+    margin-top: 150px;
+    text-align: center;
+}
+
+div#container-404 h1,
+div#container-500 h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+div#container-404 div.continue,
+div#container-500 div.continue {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}

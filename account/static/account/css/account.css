@@ -1,0 +1,117 @@
+#account-manage-container {
+    font-family: Verdana,Geneva,sans-serif;
+    background-color: #aaffff;
+    padding: 15px;
+
+}
+
+#account-manage-container label.col-form-label {
+    font-size: 13px;
+    text-align: right;
+}
+
+#account-manage-container input.form-control {
+    font-size: 13px;
+
+}
+
+#account-manage-container div.account-action h1 {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+#account-manage-container div.account-action-details {
+    font-size: 13px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+}
+
+#account-manage-container div.account-action-details div.details {
+    text-align: justify;
+}
+
+#account-manage-container div.account-action-confirmation {
+    font-size: 13px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#account-manage-container div.account-action-confirmation div.message-right,
+#account-manage-container div.account-action-confirmation div.message-justified {
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#account-manage-container div.account-action-confirmation div.message-centered {
+    text-align: center;
+}
+
+#account-manage-container div.account-action-confirmation div.message-justified {
+    text-align: justify;
+}
+
+#account-manage-container form div.validation-error {
+    color: #ff0000;
+    text-align: justify;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+#account-manage-container form div.validation-error ul {
+    padding-left: 0px;
+}
+
+#account-manage-container form div.validation-error ul li {
+    list-style-type: none;
+}
+
+#account-manage-container div.profile-view {
+
+}
+
+#account-manage-container div.profile-view div.profile-row {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#account-manage-container div.profile-view div.profile-row div.profile-field-name {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#account-manage-container div.profile-view div.profile-row div.profile-field-value {
+    text-align: left;
+    font-size: 13px;
+}
+
+#account-manage-container div.profile-actions {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media(max-width:767px){
+    #account-manage-container div.profile-view div.profile-row div.profile-field-name {
+        text-align: left;
+    }
+}
+
+@media(min-width:768px){
+    #account-manage-container div.profile-view div.profile-row div.profile-field-name {
+        text-align: right;
+    }
+}
+
+@media(min-width:992px){
+    #account-manage-container div.profile-view div.profile-row div.profile-field-name {
+        text-align: right;
+    }
+}
+
+@media(min-width:1200px){
+    #account-manage-container div.profile-view div.profile-row div.profile-field-name {
+        text-align: right;
+    }
+}

@@ -1,0 +1,26 @@
+{% extends "account/account-base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block account_manage_container %}
+
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4 account-action">
+            <h1>{% trans 'Register confirmation' %}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 account-action-confirmation">
+            <div class="message-centered">
+                <p>{% trans "Congratulations, you are now registered on the web site !!!" %}</p>
+                <p><a href="{% url 'account:login' %}">{% trans "Sign in" %}</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock account_manage_container %}

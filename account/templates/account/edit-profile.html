@@ -1,0 +1,143 @@
+{% extends "account/account-base.html" %}
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block account_manage_container %}
+
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4 account-action">
+            <h1>{% trans 'Edit profile' %}</h1>
+        </div>
+    </div>
+
+    <form id="edit-profile-form" method="post">
+
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 validation-error">
+                {{ form.non_field_errors }}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" >
+            {% trans "Username" %}
+            </label>
+            <div class="col-md-8">
+            {{ user.username }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.first_name.id_for_label }}">
+            {{ form.first_name.label }}{% if form.first_name.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.first_name|add_class:"form-control" }}
+            </div>
+            {% if form.first_name.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.first_name.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.last_name.id_for_label }}">
+            {{ form.last_name.label }}{% if form.last_name.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.last_name|add_class:"form-control" }}
+            </div>
+            {% if form.last_name.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.last_name.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.email.id_for_label }}">
+            {{ form.email.label }}{% if form.email.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.email|add_class:"form-control" }}
+            </div>
+            {% if form.email.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.email.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.street_1.id_for_label }}">
+            {{ form.street_1.label }}{% if form.street_1.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.street_1|add_class:"form-control" }}
+            </div>
+            {% if form.street_1.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.street_1.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.street_2.id_for_label }}">
+            {{ form.street_2.label }}{% if form.street_2.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.street_2|add_class:"form-control" }}
+            </div>
+            {% if form.street_2.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.street_2.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.city.id_for_label }}">
+            {{ form.city.label }}{% if form.city.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.city|add_class:"form-control" }}
+            </div>
+            {% if form.city.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.city.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.zipcode.id_for_label }}">
+            {{ form.zipcode.label }}{% if form.zipcode.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.zipcode|add_class:"form-control" }}
+            </div>
+            {% if form.zipcode.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.zipcode.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label" for="{{ form.country.id_for_label }}">
+            {{ form.country.label }}{% if form.country.field.required %}&nbsp;*{% endif %}
+            </label>
+            <div class="col-md-8">
+            {{ form.country|add_class:"form-control" }}
+            </div>
+            {% if form.country.errors %}
+            <div class="col-md-8 col-md-offset-4 validation-error">{{ form.country.errors }}</div>
+            {% endif %}
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-8 col-md-offset-4">
+                <input class="btn btn-primary" id="edit-profile-form-submit" type="submit" value="{% trans 'Save' %}" />
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock account_manage_container %}

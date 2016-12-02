@@ -1,0 +1,18 @@
+{% extends "site-base.html" %}
+{% load static homepage_filters %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/css/homepage.css' %}" />
+{% endblock extrahead%}
+
+{% block page_content %}
+    <div class="row">
+    {% for i in "1,6"|iternum %}
+        <div class="col-md-3 col-sm-6 col-xs-12 post">
+            <h1>Post # {{ i }}</h1>
+            <p>{% lorem %}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock page_content %}
