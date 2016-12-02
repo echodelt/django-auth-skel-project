@@ -1,0 +1,24 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "jdoe",
+            "password": "jdoe_pwd",
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "jdoe@test.com"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "username": "fbloggs",
+            "password": "fbloggs_pwd",
+            "first_name": "Fred",
+            "last_name": "Bloggs",
+            "email": "fbloggs@test.com"
+        }
+    }
+]

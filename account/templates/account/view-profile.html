@@ -1,0 +1,72 @@
+{% extends "account/account-base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block account_manage_container %}
+
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4 col-xs-12 account-action">
+            <h1>{% trans 'My profile' %}</h1>
+        </div>
+    </div>
+
+    <div class="row profile-view">
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Username" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.username }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "First name" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.first_name }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Last name" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.last_name }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Email" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.email }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Street (1)" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.userprofile.address.street_1 }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Street (2)" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.userprofile.address.street_2 }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "City" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.userprofile.address.city }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Zip code" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.userprofile.address.zipcode }}</div>
+        </div>
+
+        <div class="row profile-row">
+            <div class="col-md-4 col-sm-4 col-xs-12 profile-field-name">{% trans "Country" %}&nbsp;:</div>
+            <div class="col-md-8 col-sm-8 col-xs-12 profile-field-value">{{ user.userprofile.address.country }}</div>
+        </div>
+
+    </div>
+
+    <div class="row profile-actions">
+        <div class="col-md-8 col-md-offset-4 col-sm-8 col-sm-offset-4 col-xs-12">
+            <a href="{% url 'account:edit-profile' %}">edit profile</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock account_manage_container %}

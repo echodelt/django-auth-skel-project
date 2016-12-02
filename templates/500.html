@@ -1,0 +1,21 @@
+{% extends "site-base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/errors.css' %}" />
+{% endblock extrahead%}
+
+{% block page_content %}
+    <div id="container-500" >
+        <h1>{% trans 'Internal server error' %}</h1>
+        <div class="continue">
+            <p>
+                {% blocktrans %}
+                <p>It appears that something went wrong.</p>
+                <p>Try to this refresh this page or feel free to contact us if the problem persists.</p>
+                {% endblocktrans %}
+            </p>
+        </div>
+    </div>
+{% endblock page_content %}
