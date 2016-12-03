@@ -71,8 +71,8 @@ the following content in it :
     export MYSQL_DB_HOST="localhost"
     export MYSQL_DB_PORT="3306"
 
-    # Don't forget to set the below parameters which are required
-    # and used on user's passwors reset requests !
+    # Don't forget to uncomment and set the following parameters
+    # (required to send emails to the users requesting password reset)
 
     # export EMAIL_HOST=YOUR_EMAIL_HOST
     # export EMAIL_PORT=YOUR_EMAIL_PORT
