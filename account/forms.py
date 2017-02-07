@@ -46,7 +46,8 @@ class EmailForm(forms.Form):
 
     email = forms.EmailField(
         label='Email',
-        max_length=100
+        max_length=100,
+        required = True
         )
 
 
@@ -98,23 +99,24 @@ class SetPasswordForm(forms.Form):
     password1 = forms.CharField(
         label=_('Password'),
         widget=forms.PasswordInput,
+        required = True
         )
 
     password2 = forms.CharField(
         label='Password (confirm)',
         widget=forms.PasswordInput,
+        required = True
         )
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
-        if password1 and password2:
-            if password1 != password2:
-                raise forms.ValidationError(
-                    self.custom_set_password_form_err_msgs['password_mismatch'],
-                )
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError(
+                self.custom_set_password_form_err_msgs['password_mismatch']
+            )
         password_validation.validate_password(password2)
-        # the used validators are defined in settings.AUTH_PASSWORD_VALIDATORS
+        # used validators defined in settings.AUTH_PASSWORD_VALIDATORS
         return password2
 
 
@@ -131,6 +133,7 @@ class UserMinimalRegistrationForm(NameForm, EmailForm, SetPasswordForm):
     username = forms.CharField(
         label='Username',
         max_length=100,
+        required = True,
         validators=[
             MinLengthValidator(3)
             ]
