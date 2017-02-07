@@ -3,7 +3,7 @@ django-auth-skel-project
 
 Yet another Django skeleton project.
 
-This one is for **Django 1.10** and requires either Python 2.7 or 3.4.
+This one is for **Django 1.10** and requires either Python 2.7 or 3.4+.
 
 ---
 
@@ -72,14 +72,14 @@ the following content in it :
     export MYSQL_DB_PORT="3306"
 
     # Don't forget to uncomment and set the following parameters
-    # (required to send emails to the users requesting password reset)
+    # (required, among others, for the processing of password reset requests)
 
     # export EMAIL_HOST=YOUR_EMAIL_HOST
     # export EMAIL_PORT=YOUR_EMAIL_PORT
     # export EMAIL_HOST_USER=YOUR_EMAIL_HOST_USER
     # export EMAIL_HOST_PASSWORD=YOUR_EMAIL_HOST_PASSWORD
-    # export EMAIL_USE_TLS=True|Fale
-
+    # export EMAIL_USE_TLS=True|False
+    # export DEFAULT_FROM_EMAIL=YOUR_DEFAULT_FROM_EMAIL
 
 Next activate the virtualenv, install the dependencies and run the migrations :
 
